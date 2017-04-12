@@ -1,0 +1,29 @@
+$from-smalldevices-width: 425px;
+
+
+@mixin desktop {
+  @media (min-width: #{$from-smalldevices-width}) {
+    @content;
+  }
+}
+
+.mainContainer {
+	margin-top:100px !important;
+}
+.form-control{
+	padding:3px 6px !important;
+}
+.panel {
+	min-width: 220px !important;
+}
+.container{
+	padding-left:0px !important;
+	
+	@include desktop {
+     width: 425px;
+  }
+}
+.disclaimer-style{
+	float:right ;
+}
+

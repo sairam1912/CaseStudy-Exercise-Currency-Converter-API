@@ -1,0 +1,7 @@
+$from-smalldevices-width: 425px;
+
+@mixin desktop {
+  @media (min-width: #{$from-smalldevices-width}) {
+    @content;
+  }
+}

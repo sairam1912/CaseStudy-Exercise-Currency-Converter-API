@@ -1,0 +1,24 @@
+.mainContainer {
+  margin-top: 100px !important;
+}
+
+.form-control {
+  padding: 3px 6px !important;
+}
+
+.panel {
+  min-width: 220px !important;
+}
+
+.container {
+  padding-left: 0px !important;
+}
+@media (min-width: 425px) {
+  .container {
+    width: 425px;
+  }
+}
+
+.disclaimer-style {
+  float: right;
+}

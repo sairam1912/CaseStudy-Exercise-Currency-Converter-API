@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="CurrencyConverterApp">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Currency Converter</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="stylesheet/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container mainContainer">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="panel panel-default" data-ng-controller="ControllerForConverting">
+                <div class="panel-body">
+                    <form action="" method="POST" role="form">
+                        <legend>Currency Converter</legend>
+                        <span>Enter the value and select currency type :</span>
+                        <hr>
+                        <div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="">From </label>
+                                    <input type="text" class="form-control" placeholder="0.00" data-ng-model="fromValue" valid-number data-ng-change="currencyConverterFunction()">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>From </label>
+                                    <select ng-model="fromType" class="form-control" required data-ng-change="currencyConverterFunction()" ng-options="k for (k, v) in rates track by v">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="">To </label>
+                                    <input type="text" disabled="disabled" placeholder="0.00" class="form-control" data-ng-model="toValue | number : 2 " data-ng-change="currencyConverterFunction()">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>To </label>
+                                    <select ng-model="toType" class="form-control" required data-ng-change="currencyConverterFunction()" ng-options="k for (k, v) in rates track by v">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div ng-controller="disclaimerDetails">
+                        <a href="#" class="diclaimer" ng-class="{'disclaimer-style': isActive}" ng-click="toggle()">Disclaimer </a>
+                        <span id="disclaimerMessage" class="" ng-show="myVar">: This site is only for user purpose and conversion rates are subject to change based on Fixer API.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../node_modules/requirejs/require.js" data-main="js/main.js"></script>
+</body>
+
+</html>
